@@ -1,0 +1,175 @@
+/*================ VARIABLES ================*/
+
+/*============================================================================
+
+  CUSTOM FONTS
+
+==============================================================================*/
+
+@font-face {
+	font-family: 'Franchise-Bold';
+	src: url('Franchise-Bold.eot');
+	src: url('Franchise-Bold.woff') format('woff'), url('Franchise-Bold.ttf') format('truetype'), url('Franchise-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SohneBreit-Dreiviertelfett';
+	src: url('SohneBreit-Dreiviertelfett.eot');
+	src: url('SohneBreit-Dreiviertelfett.woff') format('woff'), url('SohneBreit-Dreiviertelfett.ttf') format('truetype'), url('SohneBreit-Dreiviertelfett.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Sohne-Buch';
+	src: url('Sohne-Buch.eot');
+	src: url('Sohne-Buch.woff') format('woff'), url('Sohne-Buch.ttf') format('truetype'), url('Sohne-Buch.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Sohne-Halbfett';
+	src: url('Sohne-Halbfett.eot');
+	src: url('Sohne-Halbfett.woff') format('woff'), url('Sohne-Halbfett.ttf') format('truetype'), url('Sohne-Halbfett.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*================================================================================================================================================*/
+$font_h: 'Franchise-Bold';
+$font-p: 'Sohne-Buch';
+
+body {
+
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .site-nav__link, .btn {
+    font-family: $font_h;
+  }
+}
+
+.site-header {
+  padding: 0 30px;
+}
+
+.arrow--wrapper {
+  display: inline-block;
+  line-height: 0;
+  padding-left: 10px;
+}
+
+[data-header-section] {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+
+  .announcement-bar__message {
+    font-size: 16px;
+    line-height: 21px;
+    font-family: 'Sohne-Halbfett';
+  }
+
+  .site-nav__link {
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: .5px;
+    font-weight: 100;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+
+    &:not([disabled]):hover, &:focus{
+      color: #c3c3c3;
+      text-shadow: -1px 1px 1px #000000;
+    }
+  }
+
+  .icon__fallback-text {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: $font_h;
+    font-size: 20px;
+    letter-spacing: .5px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: #c3c3c3;
+      text-shadow: -1px 1px 1px #000000;
+    }
+  }
+
+  .site-header__cart {
+    
+  }
+
+  .site-header__icons-wrapper {
+    .site-nav__link {
+      & + a {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+[data-section-type='hero-section'] {
+  .mega-title {
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: 2.25px;
+    text-shadow: none;
+    color: #091545;
+    margin: 0;
+  }
+
+  .mega-subtitle {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: $font_h;
+  }
+
+  .hero__btn {
+    font-size: 25px;
+    line-height: 54px;
+    letter-spacing: .625px;
+    padding: 0 35px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s linear;
+
+    &:hover {
+      box-shadow: 0 2px 4px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+      outline: 0;
+      text-shadow: -1px 1px 1px #000000;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .hero--watermark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px 25px;
+
+    a {
+      color: #fff;
+      transition: all 0.2s linear;
+
+      &:hover {
+        outline: 0;
+        text-shadow: -1px 1px 1px #000000;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 40px;
+      font-family: "Franchise-Bold";
+      letter-spacing: 0;
+    }
+  }
+}
+

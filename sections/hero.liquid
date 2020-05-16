@@ -107,10 +107,15 @@
             <a href="{{ section.settings.button_link }}"
               class="btn hero__btn"
               aria-label="{{ ariaLabel }}">
-              {{- section.settings.button_label | escape -}}
+              {{- section.settings.button_label | escape -}}{% include 'arrow-right' %}
             </a>
           {%- endif -%}
         </div>
+        {% if section.settings.watermark_link != nil %}
+        <div class="hero--watermark">
+          <a href="{{ section.settings.watermark_link }}"><h2>{{ section.settings.watermark_txt }}</h2></a>
+        </div>
+        {% endif %}
       </div>
     </div>
     <noscript>
@@ -712,6 +717,17 @@
         "zh-CN": "按钮链接",
         "zh-TW": "按鈕連結"
       }
+    },
+    {
+      "type": "text",
+      "id": "watermark_txt",
+      "label": "Water mark text",
+      "default": "#defycomfort"
+    },
+    {
+      "type": "url",
+      "id": "watermark_link",
+      "label": "URL"
     }
   ],
   "presets": [
