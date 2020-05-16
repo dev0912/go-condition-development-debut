@@ -12,44 +12,43 @@
 
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
   {% if section.settings.message %}
-    {% if section.settings.home_page_only == false or request.page_type == 'index' %}
-      <style>
-        .announcement-bar {
-          background-color: {{ section.settings.color_bg }};
-        }
+  
+    <style>
+      .announcement-bar {
+        background-color: {{ section.settings.color_bg }};
+      }
 
-        .announcement-bar--link:hover {
-          {% assign brightness = section.settings.color_bg | color_brightness %}
+      .announcement-bar--link:hover {
+        {% assign brightness = section.settings.color_bg | color_brightness %}
 
-          {% if brightness <= 192 %}
-            {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
-            background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
-          {% else %}
-            {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
-            background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
-          {% endif %}
-        }
+        {% if brightness <= 192 %}
+          {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+          background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+        {% else %}
+          {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+          background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+        {% endif %}
+      }
 
-        .announcement-bar__message {
-          color: {{ section.settings.color_text }};
-        }
-      </style>
+      .announcement-bar__message {
+        color: {{ section.settings.color_text }};
+      }
+    </style>
 
-      {% if section.settings.message_link == blank %}
-        <div class="announcement-bar">
-      {% else %}
-        <a href="{{ section.settings.message_link }}" class="announcement-bar announcement-bar--link">
-      {% endif %}
-
-        <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
-
-      {% if section.settings.message_link == blank %}
-        </div>
-      {% else %}
-        </a>
-      {% endif %}
-
+    {% if section.settings.message_link == blank %}
+      <div class="announcement-bar">
+    {% else %}
+      <a href="{{ section.settings.message_link }}" class="announcement-bar announcement-bar--link">
     {% endif %}
+
+      <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
+
+    {% if section.settings.message_link == blank %}
+      </div>
+    {% else %}
+      </a>
+    {% endif %}
+
   {% endif %}
 
   <header class="site-header logo--center" role="banner">
@@ -433,31 +432,6 @@
         "zh-TW": "顯示公告"
       },
       "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "home_page_only",
-      "label": {
-        "da": "Kun startside",
-        "de": "Nur Startseite",
-        "en": "Home page only",
-        "es": "Solo página de inicio",
-        "fi": "Vain etusivu",
-        "fr": "Page d'accueil uniquement",
-        "hi": "केवल होमपेज",
-        "it": "Solo home page",
-        "ja": "ホームページのみ",
-        "ko": "홈페이지만",
-        "nb": "Kun på startsiden",
-        "nl": "Alleen homepage",
-        "pt-BR": "Apenas na página inicial",
-        "pt-PT": "Apenas a página inicial",
-        "sv": "Endast hemsida",
-        "th": "หน้าแรกเท่านั้น",
-        "zh-CN": "仅主页",
-        "zh-TW": "僅限首頁"
-      },
-      "default": true
     },
     {
       "type": "text",
