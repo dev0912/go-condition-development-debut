@@ -213,3 +213,80 @@ body {
     }
   }
 }
+
+[data-section=feature-row] {
+  .feature-row__image-wrapper {
+    margin: 0 auto;
+  }
+
+  .pro-col--left {
+    background-color: #0002d7;
+    padding: 55px 0;
+
+    h2 {
+      font-size: 50px;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 50px;
+      margin-bottom: 30px;
+      max-width: 350px;
+      text-align: center;
+      margin: 0 auto 50px;
+    }
+
+    .feature-row__image-wrapper {
+      max-width: 350px;
+    }
+
+    .product_link {
+      text-align: center;
+      max-width: 350px;
+      margin: 60px auto 0;
+
+      a {
+        width: 100%;
+        color: #0049b5;
+        background-color: #fff;
+        font-size: 34px;
+        font-family: "Franchise-Bold";
+        padding: 0;
+        line-height: 70px;
+        border-radius: 30px;
+        transition: all 0.2s linear;
+
+        &:hover {
+          box-shadow: 0 2px 4px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+          outline: 0;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  .pro-col--right, .col--left {
+    &.feature-row__item {
+      padding: 0 7.5%;
+
+      h2 {
+        font-size: 60px;
+        text-transform: uppercase;
+        line-height: 60px;
+        margin-bottom: 30px;
+      }
+
+      .featured-row__subtext {
+        font-size: 21px;
+        line-height: 28px;
+        font-family: 'Sohne-Buch';
+      }
+    }
+  }
+
+  .circle-img--wrapper {
+    max-width: 235px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
