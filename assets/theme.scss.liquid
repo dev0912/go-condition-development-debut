@@ -1772,8 +1772,8 @@ symbol {
   height: 23px;
 
   @include media-query($medium-up) {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
   }
 
   &.icon--wide {
@@ -7180,12 +7180,12 @@ $toolbar-height-small: 46px;
 }
 
 .site-footer {
-  margin-top: $section-spacing;
-  padding: $footer-spacing-large 0 $section-spacing 0;
+  // margin-top: $section-spacing;
+  padding: 80px 0 50px;
 
-  @include media-query($medium-up) {
-    padding-bottom: $section-spacing-small;
-  }
+  // @include media-query($medium-up) {
+  //   padding-bottom: $section-spacing-small;
+  // }
 
   h4 {
     margin-bottom: $footer-spacing-medium / 2;
@@ -7198,7 +7198,7 @@ $toolbar-height-small: 46px;
 
 .site-footer__content {
   @include display-flexbox;
-  @include align-items(flex-start);
+  @include align-items(flex-end);
   @include flex-wrap(wrap);
 
   @include media-query($small) {
@@ -7269,9 +7269,9 @@ $toolbar-height-small: 46px;
 
 .site-footer__item-inner--newsletter {
   width: 100%;
-
+  
   .newsletter__submit {
-    margin-top: $footer-spacing-extra-small;
+    margin-top: 15px;
   }
 
   .newsletter__input {
@@ -7308,29 +7308,28 @@ $toolbar-height-small: 46px;
 
 .site-footer__linklist-item {
   display: block;
-  padding: ($grid-gutter / 2) 0;
+  // padding: ($grid-gutter / 2) 0;
 
-  @include media-query($medium-up) {
-    padding: 0 $grid-gutter 5px 0;
-  }
+  // @include media-query($medium-up) {
+  //   padding: 0 $grid-gutter 5px 0;
+  // }
 
-  &:last-of-type {
-    padding-right: 0;
-  }
+  // &:last-of-type {
+  //   padding-right: 0;
+  // }
 }
 
 .site-footer__icon-list {
-  padding-bottom: $grid-gutter;
-  @include media-query($medium-up) {
-    padding-bottom: $footer-spacing-small;
-  }
+  padding: 15px 0 30px;
+  // @include media-query($medium-up) {
+  //   padding-bottom: $footer-spacing-small;
+  // }
 }
 
 .site-footer__social-icons {
-  @include media-query($medium-up) {
-    padding-top: $footer-spacing-small / 2;
-    text-align: right;
-  }
+  // @include media-query($medium-up) {
+  //   padding-top: $footer-spacing-small / 2;
+  // }
 }
 
 .social-icons__item {

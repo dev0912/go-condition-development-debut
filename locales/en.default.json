@@ -74,9 +74,9 @@
     },
     "newsletter_form": {
       "newsletter_email": "Subscribe to our mailing list",
-      "email_placeholder": "Email address",
+      "email_placeholder": "YOUR EMAIL",
       "confirmation": "Thanks for subscribing!",
-      "submit": "Subscribe"
+      "submit": "Sign up"
     },
     "filters": {
       "show_more": "Show More",
