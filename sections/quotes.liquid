@@ -1,4 +1,11 @@
-<div class="page-width" data-section-id="{{ section.id }}" data-section-type="quotes">
+<div class="page-width" data-section-id="{{ section.id }}" data-section-type="quotes" data-section="quotes">
+  {% if section.settings.logo != nil %}
+  <div class="heading-img--wrapper">
+    <div class="img--inner">
+      <img src="{{ section.settings.logo | img_url: '56x' }}" alt="{{ section.settings.logo.alt }}">
+    </div>
+  </div>
+  {% endif %}
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
       <h2>{{ section.settings.title | escape }}</h2>
@@ -54,9 +61,14 @@
     "zh-CN": "感言",
     "zh-TW": "推薦文"
   },
-  "class": "index-section",
+  "class": "quetes-section",
   "max_blocks": 9,
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
     {
       "type": "text",
       "id": "title",
