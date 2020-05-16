@@ -433,6 +433,7 @@ body {
       font-family: 'Sohne-Buch';
       line-height: 23px;
       letter-spacing: .45px;
+      text-transform: uppercase;
       transition: all 0.2s linear;
 
       &:hover {
@@ -524,5 +525,95 @@ body {
     line-height: 25px;
     letter-spacing: .375px;
     margin-top: 15px;
+  }
+}
+
+[data-section='all-natural-ingredients'] {
+
+  .custom-feature-row {
+
+  }
+
+  .img-row--wrapper {
+
+    h2 {
+      font-size: 50px;
+      color: #00194f;
+      text-transform: uppercase;
+      line-height: 50px;
+      margin-bottom: 30px;
+      text-align: center;
+      margin: 0 auto 50px;
+    }
+  }
+
+  .img-row--inner {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+    &.tablet {
+      padding: 0 25px;
+    }
+
+    .img--wrapper {
+      position: relative;
+      width: 100%;
+
+      .img-row {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .vtc-bar {
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    margin: 45px auto;
+
+    span {
+      display: inline-block;
+      height: 75px;
+      width: 5px;
+      background-color: #000;
+    }
+  }
+ 
+  .mid-description {
+    p {
+      font-size: 40px;
+      line-height: 53px;
+      text-align: center;
+      font-family: 'Franchise-Bold';      
+    }
+  }
+
+  .product_link {
+    text-align: center;
+    margin: 50px auto 100px;
+
+    a {
+      font-size: 25px;
+      line-height: 54px;
+      letter-spacing: .625px;
+      padding: 0 50px;
+      background-color: #006ff5;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.2s linear;
+
+      &:hover {
+        box-shadow: 0 2px 4px 2px rgba(10, 34, 167, 0.15), 0 1px 2px rgba(0,0,0,0.05);
+        outline: 0;
+        text-shadow: -1px 1px 1px #5e62af;
+        background-color: rgba(0, 111, 245, 0.74);
+      }
+    }
   }
 }

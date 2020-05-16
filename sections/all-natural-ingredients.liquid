@@ -1,0 +1,183 @@
+<div class="page-width-full" data-section="all-natural-ingredients">
+    <div class="custom-feature-row">
+      <div class="img-row--wrapper">
+        {% if section.settings.title != blank %}
+          <h2 class="h3">{{ section.settings.title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.img_thumb_1 != nil %}
+        <div class="img-row--inner">
+          {% capture img_id %}ImgRow-{{ section.id | plus: 1 }}{% endcapture %}
+          {% capture wrapper_id %}ImgRowWrapper-{{ section.id | plus: 1 }}{% endcapture %}
+  
+          {%- assign img_url = section.settings.img_thumb_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <div id="{{ wrapper_id }}" class="img--wrapper js">
+            <div style="padding-top:{{ 1 | divided_by: section.settings.img_thumb_1.aspect_ratio | times: 100}}%;">
+              <img id="{{ img_id }}"
+                  class="img-row lazyload"
+                  src="{{ section.settings.img_thumb_1 | img_url: '200x200' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                  data-aspectratio="{{ section.settings.img_thumb_1.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ section.settings.img_thumb_1.alt | escape }}">
+            </div>
+          </div>
+
+          <noscript>
+            {{ section.settings.img_thumb_1 | img_url: '600x600', scale: 2 | img_tag: section.settings.img_thumb_1.alt, 'img-row' }}
+          </noscript>
+        </div>
+        <div class="vtc-bar"><span></span></div>
+        {% endif %}
+
+
+        {% if section.settings.img_thumb_2 != nil %}
+        <div class="img-row--inner tablet">
+          {% capture img_id %}ImgRow-{{ section.id | plus: 2 }}{% endcapture %}
+          {% capture wrapper_id %}ImgRowWrapper-{{ section.id | plus: 2 }}{% endcapture %}
+  
+          {%- assign img_url = section.settings.img_thumb_2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <div id="{{ wrapper_id }}" class="img--wrapper js">
+            <div style="padding-top:{{ 1 | divided_by: section.settings.img_thumb_2.aspect_ratio | times: 100}}%;">
+              <img id="{{ img_id }}"
+                  class="img-row lazyload"
+                  src="{{ section.settings.img_thumb_2 | img_url: '200x200' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                  data-aspectratio="{{ section.settings.img_thumb_2.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ section.settings.img_thumb_2.alt | escape }}">
+            </div>
+          </div>
+
+          <noscript>
+            {{ section.settings.img_thumb_2 | img_url: '600x600', scale: 2 | img_tag: section.settings.img_thumb_2.alt, 'img-row' }}
+          </noscript>
+        </div>
+        <div class="vtc-bar"><span></span></div>
+        {% endif %}
+
+        {% if section.settings.middle_text != blank %}
+        <div class="mid-description">
+          <p>{{ section.settings.middle_text }}</p>
+        </div>
+        <div class="vtc-bar"><span></span></div>
+        {% endif %}
+
+        <div class="img-row--inner">
+          {% capture img_id %}ImgRow-{{ section.id | plus: 3 }}{% endcapture %}
+          {% capture wrapper_id %}ImgRowWrapper-{{ section.id | plus: 3 }}{% endcapture %}
+          {% assign product = all_products[section.settings.featured_product] %}
+  
+          {% if section.settings.img_thumb_3 != nil %}
+            {%- assign img_url = section.settings.img_thumb_3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <div id="{{ wrapper_id }}" class="img--wrapper js">
+              <div style="padding-top:{{ 1 | divided_by: section.settings.img_thumb_3.aspect_ratio | times: 100}}%;">
+                <img id="{{ img_id }}"
+                    class="img-row lazyload"
+                    src="{{ section.settings.img_thumb_3 | img_url: '200x200' }}"
+                    data-src="{{ img_url }}"
+                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                    data-aspectratio="{{ section.settings.img_thumb_3.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ section.settings.img_thumb_3.alt }}">
+              </div>
+            </div>
+  
+            <noscript>
+              {{ section.settings.img_thumb_3 | img_url: '600x600', scale: 2 | img_tag: section.settings.img_thumb_3.alt, 'img-row' }}
+            </noscript>
+          {% else %}
+  
+              {%- assign img_url = product.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          
+              <div id="{{ wrapper_id }}" class="img--wrapper js">
+                <div style="padding-top:{{ 1 | divided_by: product.featured_image.aspect_ratio | times: 100}}%;">
+                  <img id="{{ img_id }}"
+                      class="img-row lazyload"
+                      src="{{ product.featured_image | img_url: '200x200' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ product.featured_image.alt | escape }}">
+                </div>
+              </div>
+  
+              <noscript>
+                {{ product.featured_image | img_url: '600x600', scale: 2 | img_tag: product.featured_image.alt, 'img-row' }}
+              </noscript>
+          {% endif %}
+        </div>
+        
+        {% if section.settings.product_btn_txt != blank %}
+        <div class="product_link">
+          <a href="{{ product.url }}" class="btn" aria-label="{{ section.settings.product_btn_txt }}">{{ section.settings.product_btn_txt }}{% include 'arrow-right' %}</a>
+        </div>
+        {% endif %}
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  
+  {% schema %}
+  {
+    "name": "Images with texts",
+    "class": "all-natrual-ingredients",
+    "settings": [
+      {
+        "type": "header",
+        "content": "All natural ingredients"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "All-natural ingredients"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_thumb_1",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_thumb_2",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "middle_text",
+        "label": "Middle text",
+        "default": "Natural Ingredients. <br>Super-Natural effects delivered super-fast."
+      },
+      {
+        "type": "image_picker",
+        "id": "img_thumb_3",
+        "label": "Image"
+      },
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Product"
+      },
+      {
+        "type": "text",
+        "id": "product_btn_txt",
+        "label": "Button text",
+        "default": "Get it now"
+      }
+    ],
+    "presets": [
+      {
+        "name": "All natural ingredients",
+        "category": "Image"
+      }
+    ]
+  }
+  {% endschema %}
+  
