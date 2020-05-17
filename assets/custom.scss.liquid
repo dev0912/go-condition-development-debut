@@ -51,6 +51,10 @@ body {
 
 .site-header {
   padding: 0 30px;
+
+  @media screen and (max-width: 749px) {
+    padding: 0 20px;
+  }
 }
 
 body:not(.template-index) {
@@ -77,6 +81,10 @@ body:not(.template-index) {
     font-size: 16px;
     line-height: 21px;
     font-family: 'Sohne-Halbfett';
+
+    @media screen and (max-width: 520px) {
+      font-size: 14px;
+    }
   }
 
   .site-nav__link {
@@ -120,6 +128,7 @@ body:not(.template-index) {
   }
 }
 
+
 [data-section-type='hero-section'] {
   .mega-title {
     font-size: 90px;
@@ -128,12 +137,30 @@ body:not(.template-index) {
     text-shadow: none;
     color: #091545;
     margin: 0;
+
+    @media screen and (max-width: 749px) {
+      font-size: 50px;
+      line-height: 50px;
+      letter-spacing: 1.25px;
+    }
   }
 
   .mega-subtitle {
     font-size: 40px;
     line-height: 40px;
     font-family: $font_h;
+
+    @media screen and (max-width: 749px) {
+      font-size: 20px;
+      line-height: 20px;
+      color: #091545;
+
+      p {
+        font-size: 20px;
+        line-height: 20px;
+        color: #091545;
+      }
+    }
   }
 
   .hero__btn {
@@ -187,7 +214,20 @@ body:not(.template-index) {
 
     h2 {
       font-size: 60px;
+      line-height: 60px;
       letter-spacing: 1.035px;
+
+      @media screen and (max-width: 749px) {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .feature-row__image-wrapper {
+    @media screen and (max-width: 749px) {
+      width: 52px;
     }
   }
 
@@ -202,22 +242,33 @@ body:not(.template-index) {
       width: 100%;
       padding: 0 35px;
       margin: 25px 0;
+
+      @media screen and (max-width: 749px) {
+        max-width: 100%;
+        padding: 0 45px;
+      }
     }
 
     .h4 {
       font-size: 21px;
+      line-height: 25px;
+      letter-spacing: .268px;
       font-family: 'Sohne-Halbfett';
       text-transform: uppercase;
-      letter-spacing: .268px;
-      line-height: 25px;
       margin-bottom: 10px;
+
+      @media screen and (max-width: 749px) {
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: .23px;
+      }
     }
 
     .rte-setting {
       font-size: 16px;
-      font-family: 'Sohne-Buch';
       line-height: 19px;
       letter-spacing: .23px;
+      font-family: 'Sohne-Buch';
     }
   }
 }
@@ -227,38 +278,61 @@ body:not(.template-index) {
     margin: 0 auto;
   }
 
+  .feature-row {
+
+    @media screen and (max-width: 749px) {
+      &:last-child {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
   .pro-col--left {
     background-color: #0002d7;
     padding: 55px 0;
 
     h2 {
       font-size: 50px;
+      line-height: 50px;
       color: #fff;
       text-transform: uppercase;
-      line-height: 50px;
       margin-bottom: 30px;
       max-width: 350px;
       text-align: center;
       margin: 0 auto 50px;
+
+      @media screen and (max-width: 749px) {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: 1px;
+      }
     }
 
     .feature-row__image-wrapper {
       max-width: 350px;
+
+      @media screen and (max-width: 749px) {
+        max-width: 250px;
+      }
     }
 
     .product_link {
       text-align: center;
-      max-width: 350px;
       margin: 60px auto 0;
+      max-width: 350px;
+
+      @media screen and (max-width: 749px) {
+        max-width: 265px;
+      }
 
       a {
         width: 100%;
         color: #0049b5;
         background-color: #fff;
         font-size: 34px;
+        line-height: 70px;
         font-family: "Franchise-Bold";
         padding: 0;
-        line-height: 70px;
         border-radius: 30px;
         transition: all 0.2s linear;
 
@@ -266,6 +340,11 @@ body:not(.template-index) {
           box-shadow: 0 2px 4px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
           outline: 0;
           opacity: 0.6;
+        }
+
+        @media screen and (max-width: 749px) {
+          line-height: 60px;
+          letter-spacing: .85px;
         }
       }
     }
@@ -275,11 +354,20 @@ body:not(.template-index) {
     &.feature-row__item {
       padding: 0 7.5%;
 
+      @media screen and (max-width: 749px) {
+        padding: 55px 35px;
+      }
+
       h2 {
         font-size: 60px;
-        text-transform: uppercase;
         line-height: 60px;
+        text-transform: uppercase;
         margin-bottom: 30px;
+
+        @media screen and (max-width: 749px) {
+          font-size: 40px;
+          line-height: 40px;
+        }
       }
 
       .featured-row__subtext {
@@ -296,12 +384,24 @@ body:not(.template-index) {
     margin-bottom: 40px;
     border-radius: 50%;
     overflow: hidden;
+
+    @media screen and (max-width: 749px) {
+      max-width: 200px;
+    }
+
+    @media screen and (max-width: 520px) {
+      max-width: 175px;
+    }
   }
 }
 
 .quetes-section {
   background-color: #0c0289;
   padding: 110px 0 140px;
+
+  @media screen and (max-width: 749px) {
+    padding: 50px 0;
+  }
 }
 
 [data-section='quotes'] {
@@ -320,12 +420,33 @@ body:not(.template-index) {
   .section-header {
     margin-bottom: 90px;
 
+    @media screen and (max-width: 749px) {
+      margin-bottom: 40px;
+    }
+
     h2 {
       font-size: 60px;
       line-height: 60px;
       color: #fff;
       margin: 0 auto;
       letter-spacing: 0;
+
+      @media screen and (max-width: 749px) {
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .quotes-wrapper {
+    ul.slick-dots {
+      @media screen and (max-width: 749px) {
+        display: none !important;
+      }
+    }
+
+    .slick-slide {
+      &:hover, &:focus { outline: none; }
     }
   }
 
@@ -385,6 +506,11 @@ body:not(.template-index) {
 }
 
 [data-setion='footer-section'] {
+
+  @media screen and (max-width: 749px) {
+    padding: 50px 0;
+  }
+
   .page-width {
     &.padding-0 { padding: 0; }
   }
@@ -397,17 +523,40 @@ body:not(.template-index) {
     }
   }
 
+  .site-footer__content {
+
+    @media screen and (max-width: 749px) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  }
+
   .footer-bottom--bar {
     padding: 0;
 
-    .footer-bottom--innter {
+    @media screen and (max-width: 749px) {
+      padding: 0 20px;
+    }
+
+    .footer-bottom--inner {
       display: flex;
       justify-content: space-between;
+
+      @media screen and (max-width: 749px) {
+        justify-content: center;
+        text-align: center;
+      }
 
       small {
         font-size: 15px;
         font-family: 'Sohne-Buch';
         letter-spacing: .375px;
+      }
+
+      .policy-terms {
+        @media screen and (max-width: 749px) {
+          display: none;
+        }
       }
 
       span {
@@ -453,12 +602,35 @@ body:not(.template-index) {
     }
   }
 
+  .site-footer__item-inner {
+    @media screen and (max-width: 749px) {
+      width: 100%;
+
+      .footer-logo {
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  .site-footer__item:not(.newsletter--wrapper) {
+    @media screen and (max-width: 749px) {
+      margin-bottom: 20px;
+    }
+  }
   .newsletter--wrapper {
     justify-content: flex-end;
+
+    @media screen and (max-width: 749px) {
+      margin-bottom: 60px;
+    }
   }
 
   .site-footer__item-inner--newsletter {
     max-width: 350px;
+
+    @media screen and (max-width: 749px) {
+      margin: 0 auto;
+    }
   }
 
   .newsletter-title {
@@ -519,6 +691,16 @@ body:not(.template-index) {
         line-height: 54px;
         letter-spacing: .625px;
         font-family: 'Franchise-Bold';
+
+        @media screen and (max-width: 749px) {
+          font-size: 24px;
+          line-height: 45px;
+          letter-spacing: .325px;
+        }
+      }
+
+      @media screen and (max-width: 749px) {
+        margin-top: 20px;
       }
     }
     
@@ -537,7 +719,7 @@ body:not(.template-index) {
 }
 
 [data-section='all-natural-ingredients'] {
-
+  padding: 25px 0;
   .custom-feature-row {
 
   }
@@ -546,12 +728,17 @@ body:not(.template-index) {
 
     h2 {
       font-size: 50px;
+      line-height: 50px;
       color: #00194f;
       text-transform: uppercase;
-      line-height: 50px;
       margin-bottom: 30px;
       text-align: center;
       margin: 0 auto 50px;
+
+      @media screen and (max-width: 749px) {
+        font-size: 40px;
+        line-height: 40px;
+      }
     }
   }
 
@@ -595,15 +782,21 @@ body:not(.template-index) {
   .mid-description {
     p {
       font-size: 40px;
-      line-height: 53px;
+      line-height: 40px;
       text-align: center;
-      font-family: 'Franchise-Bold';      
+      font-family: 'Franchise-Bold';
+      
+      @media screen and (max-width: 749px) {
+        font-size: 25px;
+        line-height: 25px;
+      }
     }
   }
 
   .product_link {
     text-align: center;
-    margin: 50px auto 100px;
+    padding: 50px 0 75px;
+    border-bottom: 1px solid #0002d7;
 
     a {
       font-size: 25px;

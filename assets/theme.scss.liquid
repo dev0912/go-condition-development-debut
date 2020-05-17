@@ -1345,7 +1345,7 @@ html {
 
 .main-content {
   display: block;
-  padding-top: $section-spacing-small;
+  padding-top: 45px;
 
   @include media-query($medium-up) {
     padding-top: $section-spacing;
@@ -2005,10 +2005,12 @@ a[href^="tel"] {
   &:focus {
     color: $color-text-focus;
     background-color: transparent;
+    outline: none;
   }
 
   .icon {
     vertical-align: middle;
+    color: #fff;
   }
 }
 
@@ -2731,11 +2733,16 @@ textarea {
   transition: $transition-drawer;
   position: relative;
   overflow: hidden;
+  
 
   @include media-query($medium-up) {
     // Prevent mobile menu inline styles from overriding desktop styles
     // sass-lint:disable no-important
     @include transform(translate3d(0, 0, 0));
+  }
+
+  @include media-query($small) {
+    transform: none !important;
   }
 }
 
@@ -4825,9 +4832,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   position: relative;
   background-color: rgba(40,60,129,0.4);
 
-  @include media-query($small) {
-    border-bottom: 1px solid $color-border;
-  }
+  // @include media-query($small) {
+  //   border-bottom: 1px solid $color-border;
+  // }
 
   @include media-query($medium-up) {
     // padding: 0 $gutter-site;
@@ -4855,7 +4862,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 
   @include media-query($small) {
-    padding-left: $gutter-site-mobile;
+    // padding-left: $gutter-site-mobile;
     text-align: left;
 
     img {
@@ -4968,12 +4975,16 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   position: absolute;
   right: -20px;
   top: 0;
-  font-weight: bold;
+  font-weight: 700;
   background-color: #fff;
   color: #212b36;
   border-radius: 50%;
   min-width: 1em;
   height: 1em;
+
+  @include media-query($small) {
+    font-weight: 100;
+  }
 
   span {
     font-family: $font-stack-cart-notification;
@@ -4983,33 +4994,44 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 .site-header__cart-count {
-  @include media-query($small) {
-    top: calc(7em / 16);
-    right: 0;
-    border-radius: 50%;
-    min-width: calc(19em / 16);
-    height: calc(19em / 16);
-  }
+  // @include media-query($small) {
+  //   top: calc(7em / 16);
+  //   right: 0;
+  //   border-radius: 50%;
+  //   min-width: calc(19em / 16);
+  //   height: calc(19em / 16);
+  // }
 
   span {
-    @include media-query($small) {
-      padding: 0.25em calc(6em / 16);
-      font-size: 12px;
-    }
+    // @include media-query($small) {
+    //   padding: 0.25em calc(6em / 16);
+    //   font-size: 12px;
+    // }
   }
 }
 
 .site-header__menu {
   display: none;
+
+  @include media-query($small) {
+    display: block;
+    margin-left: 30px;
+    padding: 0 0 5px;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 
 .site-header__icon {
-  @include media-query($small) {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 10px 11px;
-    margin: 0;
-  }
+  // @include media-query($small) {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   padding: 10px 11px;
+  //   margin: 0;
+  // }
 
   .icon-search {
 
@@ -6293,10 +6315,10 @@ $nav-button-padding: 15px;
   z-index: $z-index-mobile-nav;
   position: relative;
 
-  @include media-query($small) {
-    @include display-flexbox();
-    @include align-items(center);
-  }
+  // @include media-query($small) {
+  //   @include display-flexbox();
+  //   @include align-items(center);
+  // }
 }
 
 /*================ Modals ================*/
