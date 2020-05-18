@@ -1,0 +1,82 @@
+{% assign title = section.settings.title | default: false %}
+
+
+<div class="hk-social-proof" data-section="product-videos">
+  <div class="page-width width-restrict">
+      {% if title != blank %}
+      <div class="section-header text-center">
+        <h2>{{ title }}</h2>
+      </div>
+      {% endif %}
+
+      <div class="video-grid">
+        {% for block in section.blocks %}
+
+          {% assign vid = block.settings.video_url | default: false %}
+          {% assign poster = block.settings.poster | default: false %}
+          {% assign quote = block.settings.quote | default: false %}
+
+          <div class="vid">
+
+            {% if vid %}
+              <div class="vid-wrap">
+                <video {% if poster %}poster="{{ poster | img_url: '400x' }}"{% endif %}>
+                  <source type="video/mp4" src="{{ vid }}"></source>
+                </video>
+
+                <div class="play-button">
+                  <img src="{{ 'vid-play.svg' | asset_url }}" />
+                </div>
+              </div>
+            {% endif %}
+
+            {% if quote %}
+              <p class="quote">{{ quote }}</p>
+            {% endif %}
+
+          </div>
+        {% endfor %}
+      </div>
+    
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Video | Product",
+  "max_blocks": 3,
+  "class": "product-section-video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "See For Yourself"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_item",
+      "name": "Video Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL (.mp4)"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster Image"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

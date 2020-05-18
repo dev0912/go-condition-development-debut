@@ -1,121 +1,311 @@
 {
   "current": {
+    "color_text": "#00194f",
+    "color_body_text": "#000000",
+    "color_sale_text": "#fa4545",
+    "color_button": "rgba(0,0,0,0)",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "helvetica_n7",
+    "type_header_base_size": 26,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 15,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_image": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_link": "",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_max_width": 50,
+          "main_linklist": "main-menu",
+          "message": true,
+          "message_text": "Fast and Free Shipping for a Faster, Freer you",
+          "message_link": "",
+          "color_bg": "#00a6e2",
+          "color_text": "#0041a4"
+        }
       },
       "hero-1": {
         "type": "hero",
         "settings": {
-          "hero_size": "large",
-          "text_size": "large"
+          "image": "shopify:\/\/shop_images\/home-banner.png",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "x-large",
+          "text_size": "large",
+          "title": "DEFY COMFORT",
+          "text": "<p>BE PREPARED TO PERFORM<\/p>",
+          "button_label": "find out how",
+          "button_link": "#",
+          "watermark_txt": "#defycomfort",
+          "watermark_link": "#"
         }
       },
       "feature-row": {
         "type": "feature-row",
-        "settings": {}
+        "settings": {
+          "img_thumb_1": "shopify:\/\/shop_images\/product.png",
+          "featured_product": "go-condition-1",
+          "pro_title": "Grown and used in the wild",
+          "product_btn_txt": "Try now",
+          "img_thumb_2": "shopify:\/\/shop_images\/tablets.png",
+          "title_right": "Everything you need. <br>Nothing you don't.",
+          "text_right": "<p><strong>All-natural<\/strong>&nbsp;ingredients from wild grown and wild caught sources. go Condition is as close to consuming natural food as possible while ensuring optimal absorption and&nbsp;<strong>activation<\/strong>&nbsp;in the body.<\/p>",
+          "img_thumb_3": "shopify:\/\/shop_images\/grapes.png",
+          "title_left": "formulated and tested in the lab",
+          "text_left": "<p>Go Condition has been studied in cross-over design human clinical trials and the results are published in peer-reviewed scientific health journals. Our two patents not only show that it works, but&nbsp;<strong>how<\/strong>&nbsp;it works and&nbsp;<strong>why<\/strong>&nbsp;it works.<\/p>",
+          "img_thumb_4": "shopify:\/\/shop_images\/home-thumb.png"
+        }
       },
       "feature-columns": {
         "type": "feature-columns",
         "blocks": {
           "feature-columns-0": {
             "type": "text_block",
-            "settings": {}
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/defy-comport.png",
+              "title": "DEFY COMFORT",
+              "text": "<p>A life shaped by new challenges can't go back to its old habits. we support your pursuit of better.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
           },
           "feature-columns-1": {
             "type": "text_block",
-            "settings": {}
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/freedom.png",
+              "title": "DISCIPLINE = FREEDOM",
+              "text": "<p>Choose between what you want now, and what you want most. We help you achieve the promise- of your full potential and to yourself to reach it.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
           },
           "feature-columns-2": {
             "type": "text_block",
-            "settings": {}
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/less_is_more.png",
+              "title": "LESS IS MORE",
+              "text": "<p>Preparation is distillation. We give you everything you need nothing you don't.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1589650836700": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/all_natural.png",
+              "title": "ALL NATURAL",
+              "text": "<p>you really were \"born ready\". All-natural ingredients&nbsp;turn you on to all you can be.&nbsp;<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1589650855859": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/simple-science.png",
+              "title": "SIMPLE SCIENCE",
+              "text": "<p>Using science constructively to clarify,&nbsp;simplify and verify<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
           }
         },
         "block_order": [
           "feature-columns-0",
           "feature-columns-1",
-          "feature-columns-2"
+          "feature-columns-2",
+          "1589650836700",
+          "1589650855859"
         ],
         "settings": {
-          "title": ""
+          "title": "Our values",
+          "align_text": "center"
         }
-      },
-      "collection": {
-        "type": "collection",
-        "settings": {
-          "grid": 4
-        }
-      },
-      "hero-2": {
-        "type": "hero",
-        "settings": {
-          "text_size": "large"
-        }
-      },
-      "quotes": {
-        "type": "quotes",
-        "blocks": {
-          "quotes-0": {
-            "type": "quote",
-            "settings": {}
-          },
-          "quotes-1": {
-            "type": "quote",
-            "settings": {}
-          },
-          "quotes-2": {
-            "type": "quote",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "quotes-0",
-          "quotes-1",
-          "quotes-2"
-        ],
-        "settings": {
-          "title": ""
-        }
-      },
-      "image-bar": {
-        "type": "image-bar",
-        "blocks": {
-          "image-bar-0": {
-            "type": "image",
-            "settings": {}
-          },
-          "image-bar-1": {
-            "type": "image",
-            "settings": {}
-          },
-          "image-bar-2": {
-            "type": "image",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "image-bar-0",
-          "image-bar-1",
-          "image-bar-2"
-        ],
-        "settings": {}
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "show_payment_icons": true
+          "show_payment_icons": true,
+          "color_footer_bg": "#1e2f3a",
+          "color_footer_text": "#ffffff",
+          "footer_logo": "shopify:\/\/shop_images\/logo.png",
+          "show_locale_selector": true,
+          "show_currency_selector": true,
+          "menu_title": "",
+          "footer_menu": "footer",
+          "newsletter_heading": "Updates that are short on words. <br> Big on discounts",
+          "newsletter_desc": "Sign up to get brand updates and the exclusive promotions straight in your inbox."
+        }
+      },
+      "1589664196637": {
+        "type": "all-natural-ingredients",
+        "settings": {
+          "title": "All-natural ingredients",
+          "img_thumb_1": "shopify:\/\/shop_images\/home-thumb-group.png",
+          "img_thumb_2": "shopify:\/\/shop_images\/tablet.png",
+          "middle_text": "Natural Ingredients. <br>Super-Natural effects delivered super-fast.",
+          "img_thumb_3": "shopify:\/\/shop_images\/product.png",
+          "featured_product": "go-condition-1",
+          "product_btn_txt": "Get it now"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": true,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "media_size": "medium",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "custom-quotes": {
+        "type": "custom-quotes",
+        "blocks": {
+          "1589677104575": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>e on properly handsome returned throwing am no whatever. In without&nbsp;wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite.<\/p>",
+              "author": "Brenda Song"
+            }
+          },
+          "1589677120467": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched.<\/p>",
+              "author": "Zac Mendenhall"
+            }
+          },
+          "1589677135772": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Arrived totally in as between private. Favour of so as on pretty through elinor direct. Reasonable estimating be alteration we themselves entreaties me of reasonably. Direct wished so be expect polite valley. Whose asked stand it sense no spoil to.<\/p>",
+              "author": "Ercka Ortiz"
+            }
+          }
+        },
+        "block_order": [
+          "1589677104575",
+          "1589677120467",
+          "1589677135772"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/testimonial-logo.png",
+          "title": "we couldn't make it up!"
+        }
+      },
+      "product-banner": {
+        "type": "product-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/pro-banner-1.png",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "large",
+          "text_size": "medium",
+          "title": "How to prime",
+          "text": "Two Patents for the formulations and delivery methods that maximize flavonoid absorption;<br><br>\nFlavonoids are not easily absorbed into the body - especially in concentrated form<br>\nTwo polls (daily dose) provides 500mg of absorbable flavonoids",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "product-video": {
+        "type": "product-video",
+        "blocks": {
+          "1589678939157": {
+            "type": "video_item",
+            "settings": {
+              "video_url": "https:\/\/spacerace-assets.s3-us-west-2.amazonaws.com\/Proven_Shark+Tank+9%3B16+v2.m4v",
+              "poster": "shopify:\/\/shop_images\/pro-thumb-1.png",
+              "quote": "\"Literally the best! If you are an athlete this is 100% a must!\""
+            }
+          },
+          "1589679006662": {
+            "type": "video_item",
+            "settings": {
+              "video_url": "https:\/\/spacerace-assets.s3-us-west-2.amazonaws.com\/2.m4v",
+              "poster": "shopify:\/\/shop_images\/pro-thumb-2.png",
+              "quote": "\"Boosts your energy like no other!\""
+            }
+          },
+          "1589679029928": {
+            "type": "video_item",
+            "settings": {
+              "video_url": "https:\/\/spacerace-assets.s3-us-west-2.amazonaws.com\/1.m4v",
+              "poster": "shopify:\/\/shop_images\/pro-thumb-3.png",
+              "quote": "\"Keeps me active longer.\""
+            }
+          }
+        },
+        "block_order": [
+          "1589678939157",
+          "1589679006662",
+          "1589679029928"
+        ],
+        "settings": {
+          "title": "#DEFYCOMFORT"
         }
       }
     },
     "content_for_index": [
       "hero-1",
-      "feature-row",
+      "1589664196637",
       "feature-columns",
-      "collection",
-      "hero-2",
-      "quotes",
-      "image-bar"
+      "feature-row"
     ]
   },
   "presets": {

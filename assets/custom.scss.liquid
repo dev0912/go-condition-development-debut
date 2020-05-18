@@ -506,13 +506,18 @@ body:not(.template-index) {
 }
 
 [data-setion='footer-section'] {
-
+  @media screen and (max-width: 1200px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   @media screen and (max-width: 749px) {
-    padding: 50px 0;
+    padding: 50px 20px;
   }
 
   .page-width {
-    &.padding-0 { padding: 0; }
+    &.padding-0 { 
+      padding: 0;
+    }
   }
 
   .social-icons__item {
@@ -815,6 +820,177 @@ body:not(.template-index) {
         text-shadow: -1px 1px 1px #5e62af;
         background-color: rgba(0, 111, 245, 0.74);
       }
+    }
+  }
+}
+
+
+
+/*
+===========================================================================================================
+  Product Page sections
+===========================================================================================================
+*/ 
+
+.product-section-video {
+  padding: 90px 0 80px;
+
+  @media screen and (max-width: 749px) {
+    padding: 50px 0 30px;
+  }
+}
+
+[data-section='product-videos'] {
+  position: relative;
+
+  .width-restrict {
+    
+  }
+
+  .section-header {
+    margin-bottom: 25px;
+
+    h2 {
+      font-size: 60px;
+      line-height: 60px;
+      letter-spacing: 1.035px;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 749px) {
+      margin-bottom: 10px;
+
+      h2 {
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+  }
+
+  .video-grid {
+    // position: relative;
+    // z-index: 6;
+
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 749px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .slick-list {
+    padding: 0;
+  }
+
+  .vid {
+    // margin: 20px;
+    // width: auto;
+    // vertical-align: top;
+    // display: inline-block;
+    // position: relative;
+    // float: none;
+    // height: initial;
+
+    margin: 20px 20px 50px;
+  }
+  .vid-wrap {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  p.quote {
+    text-align: center;
+    margin: 15px 0 0;
+    font-family: 'Sohne-Halbfett';
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.248px;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .play-button { position: absolute; }
+}
+
+[data-section='product-hero-section'] {
+  .pro-hero {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    @media screen and (max-width: 749px) {
+      flex-direction: column;
+      height: initial;
+    }
+  }
+
+  .pro-hero__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .text-wrapper {
+    max-width: 484px;
+    margin-left: 60px;
+
+    @media screen and (max-width: 749px) {
+      max-width: calc(100% - 80px);
+      margin-left: initial;
+      margin: 0 auto;
+      padding: 50px 0 35px;
+    }
+    @media screen and (max-width: 520px) {
+      max-width: calc(100% - 40px);
+      padding: 40px 0 20px;
+    }
+  }
+
+  .mega-title {
+    font-family: "Franchise-Bold";
+    color: #00194f;
+    text-transform: uppercase;
+    text-shadow: none;
+    margin-bottom: 25px;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 749px) {
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: .8px;
+    }
+  }
+  .mega-subtitle {
+    font-family: 'Sohne-Buch';
+    text-shadow: none;
+    color: #000;
+    font-size: 25px;
+    line-height: 27px;
+    letter-spacing: .43px;
+
+    @media screen and (max-width: 749px) {
+      font-size: 18px;
+      letter-spacing: .31px;
     }
   }
 }

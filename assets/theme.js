@@ -6354,6 +6354,7 @@ theme.Product = (function() {
     this._initMediaSwitch();
     this._initAddToCart();
     this._setActiveThumbnail();
+    // this._initThumbnailSlider();
     this._initProductVideo();
     this._initModelViewerLibraries();
     this._initShopifyXrLaunch();
@@ -6371,9 +6372,9 @@ theme.Product = (function() {
       enquire.register(this.settings.mediaQuerySmall, {
         match: function() {
           // initialize thumbnail slider on mobile if more than four thumbnails
-          if ($(self.selectors.productThumbImages).length > 4) {
-            self._initThumbnailSlider();
-          }
+          // if ($(self.selectors.productThumbImages).length > 4) {
+          //   self._initThumbnailSlider();
+          // }
 
           // destroy image zooming if enabled
           if (self.settings.zoomEnabled) {
@@ -6385,9 +6386,9 @@ theme.Product = (function() {
           self.settings.bpSmall = true;
         },
         unmatch: function() {
-          if (self.settings.sliderActive) {
-            self._destroyThumbnailSlider();
-          }
+          // if (self.settings.sliderActive) {
+          //   self._destroyThumbnailSlider();
+          // }
 
           self.settings.bpSmall = false;
         }
@@ -6402,6 +6403,8 @@ theme.Product = (function() {
           }
         }
       });
+
+      this._initThumbnailSlider()
     },
 
     _initVariants: function() {
@@ -6909,11 +6912,13 @@ theme.Product = (function() {
 
     _initThumbnailSlider: function() {
       var options = {
-        slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         infinite: false,
         prevArrow: '.thumbnails-slider__prev--' + this.settings.sectionId,
         nextArrow: '.thumbnails-slider__next--' + this.settings.sectionId
+        // prevArrow: '.thumbnails-slider__prev--' + this.settings.sectionId,
+        // nextArrow: '.thumbnails-slider__next--' + this.settings.sectionId
       };
 
       $(this.selectors.productThumbs).slick(options);
@@ -7455,6 +7460,42 @@ $(document).ready(function() {
   sections.register('hero-section', theme.HeroSection);
   sections.register('product-recommendations', theme.ProductRecommendations);
   sections.register('footer-section', theme.FooterSection);
+
+
+// Product video section
+  if (!$('.hk-social-proof').length) return;
+
+  var $el = $('.hk-social-proof');
+  var $videos = $el.find('.video-grid');
+
+  // $videos.slick({
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   arrows: true,
+  //   autoplay: false,
+  //   centerMode: true,
+  //   centerPadding: '60px',
+  //   responsive: [
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1
+  //       }
+  //     }
+  //   ]
+  // });
+
+  $videos.find('.vid').on('click', playVid);
+
+  function playVid(e) {
+    var $cur = $(e.currentTarget);
+    $cur.find('.play-button').hide();
+    $cur.find('video')[0].play();
+  }
+
 });
 
 theme.init = function() {
