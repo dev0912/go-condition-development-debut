@@ -6912,11 +6912,11 @@ theme.Product = (function() {
 
     _initThumbnailSlider: function() {
       var options = {
+        vertical: true,
         slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: false,
-        prevArrow: '.thumbnails-slider__prev--' + this.settings.sectionId,
-        nextArrow: '.thumbnails-slider__next--' + this.settings.sectionId
+        slidesToScroll: 4,
+        verticalSwiping: true,
+        arrows: false
       };
 
       $(this.selectors.productThumbs).slick(options);
