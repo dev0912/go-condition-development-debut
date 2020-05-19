@@ -1,70 +1,73 @@
 <div class="page-width" data-section="faq">
 
-  
-  <div id="custom_accordion">
-    <div class="custom_panel"> <!-- first panel -->
-      <div class="acc-header">First Header</div>
-      <div class="acc-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+  <div id="accordion--wrapper">
+    <button class="custom_accordion">Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
     </div>
-    <div class="custom_panel"> <!-- second panel -->
-      <div class="acc-header">Second Header</div>
-      <div class="acc-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+
+    <button class="custom_accordion">Section 2</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
     </div>
-    <div class="custom_panel"> <!-- third panel -->
-      <div class="acc-header">Lorem ipsum dolor sit amet?</div>
-      <div class="acc-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+
+    <button class="custom_accordion">Section 3</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
     </div>
   </div>
 
-
 </div>
-<style>
 
-#custom_accordion .acc-body{
-  display : none;
+<style>
+  .custom_accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.custom_accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
 }
 
-#custom_accordion .active .acc-body {
-  display : block;
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+.active, .custom_accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 </style>
 
 <script>
-function initAccordion(accordionElem){
+  var acc = document.getElementsByClassName("custom_accordion");
+  var i;
   
-  //when panel is clicked, handlePanelClick is called.          
-  function handlePanelClick(event){
-    if(event.target.parentNode.classList.contains('active')) {
-      event.target.parentNode.classList.remove('active')
-      return !0
-    }
-    showPanel(event.currentTarget);
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
   }
-//Hide currentPanel and show new panel.  
-  
-  function showPanel(panel){
-    //Hide current one. First time it will be null. 
-     var expandedPanel = accordionElem.querySelector(".active");
-     if (expandedPanel){
-         expandedPanel.classList.remove("active");
-     }
-     //Show new one
-     panel.classList.add("active");
-  }
-  var allPanelElems = accordionElem.querySelectorAll(".custom_panel");
-  for (var i = 0, len = allPanelElems.length; i < len; i++){
-       allPanelElems[i].addEventListener("click", handlePanelClick);
-  }
-
-
-  //By Default Show first panel
-  // showPanel(allPanelElems[0])
-}
-initAccordion(document.getElementById("custom_accordion"));
-</script>
+  </script>
