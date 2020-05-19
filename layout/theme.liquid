@@ -104,6 +104,7 @@
   <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
   <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom-theme.js' | asset_url }}" defer="defer"></script>
 
   {{ content_for_header }}
 </head>
@@ -119,7 +120,9 @@
   {% section 'header' %}
 
   <div class="page-container drawer-page-content" id="PageContainer">
-
+    {% if template contains 'product' %}
+    {% include 'breadcrumbs' %}
+    {% endif %}
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>

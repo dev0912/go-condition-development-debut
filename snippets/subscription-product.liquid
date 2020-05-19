@@ -164,24 +164,14 @@
 			{% endif %}
 		</select>
 		<div id="rc_radio_options" role="radiogroup" aria-labelledby="Purchase options" {% if first_option == "autodeliver" %}class="rc_reverse-options"{% endif %}>
-			{% unless subscription_only %}
-				<div class="rc_block rc_block__type rc_block__type__onetime {% unless select_subscription_first %}rc_block__type--active{% endunless %}">
-					<input type="radio" id="rc_purchase_type_onetime" name="purchase_type" value="onetime" {% unless select_subscription_first %}checked{% endunless %} class="rc_radio rc_radio__onetime">
-					<label for="rc_purchase_type_onetime" class="rc_label rc_label__onetime">
-						{{ label_onetime }}{% if discount_percentage > 0 %}:{% endif %}
-						{% if discount_percentage > 0 %}
-							<span id="rc_price_onetime" class="rc_price rc_price__onetime" aria-label="original price"></span>
-						{% endif %}
-					</label>
-				</div>
-			{% endunless %}
+			
 			<div class="rc_block rc_block__type rc_block__type__autodeliver {% if select_subscription_first %}rc_block__type--active{% endif %}" {% if subscription_only and shipping_interval_frequency.size == 1 %}style="display: none;"{% endif %}>
 				<input type="radio" name="purchase_type" id="rc_purchase_type_autodeliver" value="autodeliver" {% if select_subscription_first %}checked{% endif %} class="rc_radio rc_radio__autodeliver" {% if subscription_only %}style="display: none;"{% endif %}>
 				{% unless subscription_only %}
 					<label for="rc_purchase_type_autodeliver" class="rc_label rc_label__autodeliver">
 						{{ label_autodeliver }}
 						{% if discount_percentage > 0 %}
-							<span class="rc_label__discount" aria-label="subscription discount">({{ discount_percentage }}%):</span>
+							<span class="rc_label__discount" aria-label="subscription discount">{{ discount_percentage }}% </span>
 							<span id="rc_price_autodeliver" class="rc_price rc_price__autodeliver" aria-label="recurring price"></span>
 						{% endif %}
 					</label>
@@ -211,9 +201,30 @@
 								</option>
 							{% endfor %}
 						</select>
+          </label>
+          <!-- Custom text section for recharge -->
+          <div class="recharge-custom--txts">
+            <label class="recharge-custom--txts_label">FREE SHIPPING <span>when you subscribe</span></label>
+            <p class="recharge-custom--txts_content">
+              *Receive 25% off your first order and 15% off each other after<br>
+              (plus free shipping) when you subscribe. Other restrictions may apply.
+            </p>
+          </div>
+          <!-- Custom text section for recharge -->
+				</div>
+      </div>
+      
+      {% unless subscription_only %}
+				<div class="rc_block rc_block__type rc_block__type__onetime {% unless select_subscription_first %}rc_block__type--active{% endunless %}">
+					<input type="radio" id="rc_purchase_type_onetime" name="purchase_type" value="onetime" {% unless select_subscription_first %}checked{% endunless %} class="rc_radio rc_radio__onetime">
+					<label for="rc_purchase_type_onetime" class="rc_label rc_label__onetime">
+						{{ label_onetime }}{% if discount_percentage > 0 %}{% endif %}
+						{% if discount_percentage > 0 %}
+							<span id="rc_price_onetime" class="rc_price rc_price__onetime" aria-label="original price"></span>
+						{% endif %}
 					</label>
 				</div>
-			</div>
+			{% endunless %}
 		</div>
 		<div class="rc_popup">
 			{% if show_widget %}

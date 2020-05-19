@@ -32,15 +32,16 @@
   <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}">
     <div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+      <div class="product-main-img--wrapper">
+        {%- for media in product.media -%}
+          {% include 'media', media: media, featured_media: featured_media, height: height, enable_image_zoom: enable_image_zoom, image_zoom_size: product_image_zoom_size, image_scale: product_image_scale %}
+        {%- endfor -%}
 
-      {%- for media in product.media -%}
-        {% include 'media', media: media, featured_media: featured_media, height: height, enable_image_zoom: enable_image_zoom, image_zoom_size: product_image_zoom_size, image_scale: product_image_scale %}
-      {%- endfor -%}
-
-      <noscript>
-        {% capture product_image_size %}{{ height }}x{% endcapture %}
-        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
-      </noscript>
+        <noscript>
+          {% capture product_image_size %}{{ height }}x{% endcapture %}
+          <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
+        </noscript>
+      </div>
 
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
 
@@ -63,7 +64,7 @@
           {%- assign enable_thumbnail_slides = true -%}
         {% endif %}
 
-        <div class="thumbnails-wrapper{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
+        <div class="thumbnails-wrapper thumbnails-slider--active">
           {% if enable_thumbnail_slides == true %}
             <button type="button" class="btn btn--link thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}">
               {% include 'icon-chevron-left' %}
@@ -115,13 +116,15 @@
 
     <div class="grid__item {{ product_description_width }}">
       <div class="product-single__meta">
-
         <h1 class="product-single__title">{{ product.title }}</h1>
-
+        <p class="product-short-desc">{{ product.description }}</p>
+        <div class="product--review-stars"><img src="{{ 'stars.png' | asset_url }}" alt="product review"></div>
+        
+          {% unless product.metafields.subscriptions.shipping_interval_frequency %}
           <div class="product__price">
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
           </div>
-
+          {% endunless %}
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
             <div class="product__policies rte" data-product-policies>
               {%- if shop.taxes_included -%}
@@ -179,10 +182,14 @@
               <div class="product-form__controls-group">
                 <div class="product-form__item">
                   <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-                  <input type="number" id="Quantity-{{ section.id }}"
-                    name="quantity" value="1" min="1" pattern="[0-9]*"
-                    class="product-form__input product-form__input--quantity" data-quantity-input
-                  >
+                  <div class="qty--wrapper">
+                    <span class="product-minus js-change-quantity" data-func="minus"></span>
+                    <input type="number" id="Quantity-{{ section.id }}"
+                      name="quantity" value="1" min="1" size="2"
+                      class="product-form__input product-form__input--quantity" data-quantity-input
+                    >
+                    <span class="product-plus js-change-quantity" data-func="plus"></span>
+                  </div>
                 </div>
               </div>
             {% endif %}
@@ -243,15 +250,18 @@
           aria-hidden="true"
         >{{ 'products.product.loader_label' | t }}</p>
 
-        <div class="product-single__description rte">
+        <!-- <div class="product-single__description rte">
           {{ product.description }}
-        </div>
+        </div> -->
 
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
         {% endif %}
     </div>
   </div>
+
+
+  {% include 'product-tabs' %}
 </div>
 
 {% unless product == empty %}

@@ -6917,8 +6917,6 @@ theme.Product = (function() {
         infinite: false,
         prevArrow: '.thumbnails-slider__prev--' + this.settings.sectionId,
         nextArrow: '.thumbnails-slider__next--' + this.settings.sectionId
-        // prevArrow: '.thumbnails-slider__prev--' + this.settings.sectionId,
-        // nextArrow: '.thumbnails-slider__next--' + this.settings.sectionId
       };
 
       $(this.selectors.productThumbs).slick(options);

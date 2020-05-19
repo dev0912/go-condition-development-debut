@@ -3623,7 +3623,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .product-form {
   width: auto;
-  padding-top: 2rem;
+  padding-top: 10px;
 }
 
 .product-form__controls-group {
@@ -3827,12 +3827,18 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   position: relative;
   border: 2px solid transparent;
 
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  overflow: hidden;
+
   &:not([disabled]):not(.active-thumb):hover {
     opacity: 0.8;
   }
 
+  &:focus { outline: none; }
+
   &.active-thumb {
-    border-color: $color-text;
+    border-color: #98b3ec;
   }
 }
 
@@ -4033,7 +4039,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-single__thumbnails {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 15px;
+  // margin-top: 15px;
   margin-left: -9px;
   margin-right: -9px;
 
@@ -4056,6 +4062,13 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-single__thumbnails-item {
   flex: 0 0 25%;
   padding-left: 5px;
+  padding-top: 5px;
+
+  &:focus { outline: none; }
+  
+  & + .product-single__thumbnails-item {
+    margin-top: 20px;
+  }
 
   @include media-query($small) {
     &.slick-slide {
@@ -8734,80 +8747,4 @@ $min-height-disclosure: 92px;
       margin-left: 0;
     }
   }
-}
-
-
-@include media-query($medium-up) { 
-  .no-clear {
-  clear: none !important; 
-  }
-  
-  .thumbnails-slider_prev.thumbnails-slider_prev--product-template {
-  display: inline-block;
-  position: absolute;
-  left: -9%;
-  top: 60%;
-  transform: translateY(-60%);
-  z-index: 10000;
-  padding-left: 0;
-  }
-  
-  .thumbnails-slider_next.thumbnails-slider_next--product-template {
-  display: inline-block;
-  position: absolute;
-  right: -9%;
-  top: 60%;
-  transform: translateY(-60%);
-  z-index: 10000;
-  }
-  
-  .product-single__photos {
-  position: relative; 
-  padding-left: 0;
-  }
-  
-  .product-single__thumbnails-item.js.no-clear.slick-slide.slick-active {
-  padding-top: 0;
-  }
-  
-  .thumbnails-wrapper.thumbnails-slider--active {
-  position: relative;
-  }
-  
-  .left--arrow {
-  position: absolute;
-  top: 60%;
-  transform: translateY(-60%);
-  left: -9%;
-  z-index: 10000;
-  }
-  
-  .right--arrow {
-  position: absolute;
-  top: 60%;
-  transform: translateY(-60%);
-  right: -9%;
-  z-index: 10000;
-  }
-  
-  .slick-hidden { 
-  display: none !important; 
-  }
-  
-  .slick-track {
-  margin-top: 10px;
-  }
-  
-  .thumbnails-slider--active {
-  max-width: 92%;
-  margin: 0 auto;
-  }
-  
-  .product-single__thumbnail {
-  margin: 3px 8px;
-  }
-  }
-
-.thumbnails-slider__btn {
-  z-index: 1;
 }

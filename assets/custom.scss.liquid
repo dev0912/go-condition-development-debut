@@ -994,3 +994,276 @@ body:not(.template-index) {
     }
   }
 }
+
+
+.product-template__container {
+
+  .product-single__media-group { position: relative; }
+
+  .thumbnails-wrapper {
+    position: absolute;
+    top: 0;
+    // left: 0;
+    max-width: 80px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .product-short-desc {
+    font-family: 'SohneBreit-Dreiviertelfett';
+    color: #0082f9;
+    letter-spacing: .21px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .tabs-description--wrapper {
+    max-width: 565px;
+    width: 100%;
+    margin: 70px 0;
+
+    ul.tabs{
+      border-bottom:solid 1px #00a6e2;
+      display:block;
+      margin:10px 0 15px 0;
+      padding:0;
+      border-top:0;
+      list-style:none outside;
+      margin-left:0;
+
+      li{
+        display:block;
+        width:auto;
+        height:30px;
+        padding:0;
+        float:left;
+        margin-bottom:0;
+        border:0;
+        list-style:none outside;
+        margin-left:0;
+
+        a{
+          display: block;
+          text-decoration: none;
+          padding: 0px 15px;
+          margin: 0;
+          color: #474747;
+          font-family: 'SohneBreit-Dreiviertelfett';
+          font-size: 20px;
+          line-height: 25px;
+          letter-spacing: .2px;
+
+          &.active {
+            color: #00a6e2;
+          }
+        }
+      }
+    }
+    
+    
+    ul.tabs-content{
+      margin:0;
+      display:block;
+      border:0;
+
+      & > li{
+        display:none;
+        border:0;
+
+        &.active {
+          display:block;
+          border:0;
+          padding-left:10px;
+        }
+
+        p {
+          font-family: 'Sohne-Buch';
+          letter-spacing: .3px;
+          font-size: 21px;
+          line-height: 25px;
+        }
+      }
+
+    }
+    
+    ul.tabs:before,ul.tabs:after{
+      content:'\0020';
+      display:block;
+      overflow:hidden;
+      visibility:hidden;
+      width:0;
+      height:0
+    }
+    ul.tabs:after{
+      clear:both
+    }
+    ul.tabs{
+      zoom:1
+    }
+  }
+
+  .product-form__cart-submit {
+    background-color: #006ff5;
+    color: #fff;
+    font-family: 'Franchise-Bold';
+    transition: all 0.2s linear;
+    border: 0;
+    border-radius: 30px;
+    width: initial;
+    padding: 0 45px;
+    font-size: 31px;
+    line-height: 50px;
+    letter-spacing: .395px;
+
+    &:hover {
+      background-color: #006ff5;
+      box-shadow: 0 2px 4px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+      outline: 0;
+      text-shadow: -1px 1px 1px #000000;
+    }
+  }
+
+  div.rc_block__type {
+    border: 1px solid #bce5ee;
+    margin-bottom: 10px;
+  }
+
+  .rc_popup { display: none; }
+
+  div.rc_block__type__onetime {
+    position: relative;
+  }
+
+  span.rc_label__delivery {
+    font-family: 'Sohne-Halbfett';
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: .4px;
+  }
+  div.rc_block__type--active label.rc_label {
+    width: calc(100% - 190px);
+  }
+
+  #rc_price_autodeliver {
+    width: calc(100% - 195px);
+    display: inline-block;
+    text-align: right;
+    font-family: 'Sohne-Halbfett';
+    font-size: 21px;
+    line-height: 21px;
+    letter-spacing: .525px;
+    color: #0094fd;
+  }
+
+  select.rc_select {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    min-height: 38px;
+  }
+
+  .recharge-custom--txts {
+    padding: 15px 10px 10px 22px;
+    .recharge-custom--txts_label {
+      font-family: 'Sohne-Halbfett';
+      font-size: 11px;
+      line-height: 13px;
+      letter-spacing: .25px;
+      color: #000;
+
+      span {
+
+      }
+    }
+
+    .recharge-custom--txts_content {
+      font-family: 'Sohne-Buch';
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: .25px;
+      color: #656363;
+    }
+  }
+
+  #rc_price_onetime {
+    font-family: 'Sohne-Halbfett';
+    font-size: 21px;
+    line-height: 21px;
+    letter-spacing: .525px;
+    color: #0094fd;
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  input[type='number'].product-form__input--quantity {
+    max-width: 100%;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 3.93px;
+    line-height: 38px;
+    padding: 0;
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .qty--wrapper {
+    position: relative;
+    width: 190px;
+  }
+
+  .product-minus, .product-plus {
+    display: inline-flex;
+    position: absolute;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 22px;
+    background-size: 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .product-minus {
+    background-image: url('minus.png');
+  }
+
+  .product-plus {
+    top:0;
+    right: 0;
+    background-image: url('plus.png');
+  }
+}
+
+// Breadcrumbs
+.breadcrumb {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 60px;
+
+  a, span {
+    font-family: 'Sohne-Buch';
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .26px;
+  }
+
+  span:not(.actived) {
+    margin: 0 5px;
+  }
+
+  span.actived {
+    color: #006ff5;
+  }
+}
