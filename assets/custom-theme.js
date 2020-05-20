@@ -76,3 +76,34 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+// Product main image swipe
+var dragDirection = '';
+$("body .product-single__media-wrapper").mousedown(function(e) {
+  var previous_x_position = e.pageX;
+  // var previous_y_position = e.pageY;
+
+  $(window).mousemove(function(event) {
+    var x_position = event.pageX;
+    // var y_position = event.pageY;
+
+    if (previous_x_position < x_position) {
+      // console.log('moving right');
+      dragDirection = 'right'
+
+    } else {
+      // console.log('moving left');
+      dragDirection = 'left'
+    }
+    // if (previous_y_position < y_position) {
+    //   console.log('moving down');
+    // } else {
+    //   console.log('moving up');
+    // }
+    $(window).unbind("mousemove");
+  });
+}).mouseup(function() {
+  $(window).unbind("mousemove");
+  dragDirection == 'right' ? $('body .product-single__thumbnails').find('.active-thumb').closest('li').next().find('a').trigger('click') : $('body .product-single__thumbnails').find('.active-thumb').closest('li').prev().find('a').trigger('click')
+});

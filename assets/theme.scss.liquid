@@ -3892,6 +3892,14 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   left: 4px;
   width: calc(100% - 8px);
 
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+
   .no-js & {
     position: relative;
   }
@@ -3918,6 +3926,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-single__media-wrapper {
   margin: 0 auto;
   width: 100%;
+  cursor: grab;
+  
+  &:focus { outline: none; }
 }
 
 .product-single__media {

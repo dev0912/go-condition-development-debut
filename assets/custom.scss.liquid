@@ -1290,6 +1290,10 @@ body:not(.template-index) {
   .page--inner {
     max-width: 650px;
     width: 100%;
+
+    @media screen and (max-width: 1200px) {
+      max-width: 100%;
+    }
   }
 }
 
@@ -1299,6 +1303,12 @@ body:not(.template-index) {
   min-height: 600px;
   position: relative;
 
+  @media screen and (max-width: 1200px) {
+    padding-left: 55px;
+    padding-right: 55px;
+    min-height: initial;
+  }
+
   &:before {
     position: absolute;
     content: '';
@@ -1307,6 +1317,10 @@ body:not(.template-index) {
     padding: 350px;
     right: -16.5%;
     top: -60px;
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
 
   .faq-heading {
