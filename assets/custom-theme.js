@@ -43,3 +43,36 @@ $(document).ready(function() {
   })
 });
 
+
+// Faq page - accordion
+var accordionWrapper = document.getElementById("accordion--wrapper");
+var acc = document.getElementsByClassName("head_tab");
+var i;
+
+function fadeContent (panel) {
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+}
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function(e) {
+    console.log(e)
+    if(this.classList.contains('active')) {
+      this.classList.toggle("active")
+      fadeContent(this.nextElementSibling)
+    } else {
+      var expandedPanel = accordionWrapper.querySelector(".active")
+      if (expandedPanel){
+        expandedPanel.classList.remove("active")
+
+        fadeContent(expandedPanel.nextElementSibling)
+      }
+
+      this.classList.toggle("active")
+      fadeContent(this.nextElementSibling)
+    }
+  });
+}

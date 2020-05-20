@@ -1,73 +1,79 @@
 <div class="page-width" data-section="faq">
-
-  <div id="accordion--wrapper">
-    <button class="custom_accordion">Section 1</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
+  <div class="page--inner">
+    {% if section.settings.title != blank %}
+    <div class="faq-heading">
+      <h2>{{ section.settings.title }}</h2>
     </div>
+    {% endif %}
 
-    <button class="custom_accordion">Section 2</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
+    {% if section.blocks.size > 0 %}
+    <div id="accordion--wrapper">
 
-    <button class="custom_accordion">Section 3</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
+    {% for block in section.blocks %}
+      {% if block.settings.question != blank %}
+      <div class="acc-item">
+        <div class="head_tab">
+          <label class="head-title">
+            {{block.settings.question }}
+            <span class="spin-ico">
+              <span class="i-plus"><svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5 14.9H14.3V25.65H10.675V14.9H0.525V11.525H10.675V0.85H14.3V11.525H24.5V14.9Z" fill="#006FF5"/></svg></span>
+              <span class="i-minus"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.6875 0.6875H19.2125V6.35H0.6875V0.6875Z" fill="#006FF5"/></svg></span>
+            </span>
+          </label>
+        </div>
+        {% if block.settings.answer != blank %}
+        <div class="panel">
+          <p>{{ block.settings.answer }}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% endfor %}
+    
     </div>
+    {% endif %}
   </div>
-
 </div>
-
 <style>
-  .custom_accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-.custom_accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-.active, .custom_accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-</style>
-
-<script>
-  var acc = document.getElementsByClassName("custom_accordion");
-  var i;
-  
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
+  [data-section='faq']:before {
+    background-image: url("{{ section.settings.bg_img | img_url: '800x' }}");
   }
-  </script>
+</style>
+{% schema %}
+{
+  "name": "FAQ",
+  "class": "faq-section",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
